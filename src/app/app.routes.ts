@@ -8,7 +8,7 @@ export const routes: Routes = [
   {path: "", redirectTo: "produtos", pathMatch: "full"},
   { path: 'carrinho', loadChildren: () => import('./carrinho/carrinho.module').then(m => m.CarrinhoModule) },
   { path: 'contato', loadChildren: () => import('./contato/contato.module').then(m => m.ContatoModule) },
-  {path:"**", component: NaoEncontradaComponent}
+  {path:"**", loadChildren: () => import('./nao-encontrada/nao-encontrada-routing.module').then(m => m.NaoEncontradaRoutingModule)}
 ];
 
 @NgModule({
